@@ -1,6 +1,6 @@
 
 
-# !!!!!!  ДЛЯ ЗАПУСКА ОТДЕЛЬНЫХ ЗАДАНИЙ РАСКОММЕНТИРУЙТЕ ИХ РЕШЕНИЕ  !!!!!!
+# !!!!!!  ДЛЯ ЗАПУСКА ОТДЕЛЬНЫХ ЗАДАНИЙ РАСКОММЕНТИРУЙТЕ ИХ РЕШЕНИЕ, ЕСЛИ ПОТРЕБУЕТСЯ  !!!!!!
 
 
 # Домашняя работа на 16.04.2023.
@@ -20,7 +20,7 @@
 # вычитание, умножение, деление и т.д.)
 # К уже реализованному классу «Дробь» добавьте статический метод,
 # который при вызове возвращает количество созданных объектов класса «Дробь».
-#
+
 # Решение:
 
 class Fraction:
@@ -59,6 +59,8 @@ class Fraction:
         return round(fract1 / fract2, 3)
 
 print()
+print('Задание 1. Вывод результатов на экран:')
+print()
 fraction1 = Fraction(4, 5).decimal_view
 fraction2 = Fraction(1, 2).decimal_view
 print()
@@ -69,15 +71,16 @@ Fraction.division(fraction1, fraction2)
 print()
 Fraction.count_ex()
 print()
+print()
 
-#
+
 # Задание 2
 # Создайте класс для конвертирования температуры из
 # Цельсия в Фаренгейт и наоборот. У класса должно быть
 # два статических метода: для перевода из Цельсия в Фаренгейт и для перевода из Фаренгейта в Цельсий.
 # Также класс должен считать количество подсчетов температуры и
 # возвращать это значение с помощью статического метода.
-#
+
 # Решение:
 
 class TempConv:
@@ -85,7 +88,6 @@ class TempConv:
     def __init__(self, value):
         self.value = value
         TempConv.temp_counts_num += 1
-
 
     @staticmethod
     def get_temp_counts_num():
@@ -104,21 +106,21 @@ class TempConv:
         return res
 
 print()
-from_Cels_temp1 = TempConv(10)
-from_Cels_temp2 = TempConv(15)
-from_Faring_temp1 = TempConv(41)
-from_Faring_temp2 = TempConv(30)
+print('Задание 2. Вывод результатов на экран:')
+print()
+from_Cels_temp1 = TempConv(10).value
+from_Cels_temp2 = TempConv(15).value
+from_Faring_temp1 = TempConv(41).value
+from_Faring_temp2 = TempConv(30).value
 
-TempConv.to_Faringate(from_Cels_temp1.value)
-TempConv.to_Faringate(from_Cels_temp2.value)
-TempConv.to_Celsius(from_Faring_temp1.value)
-TempConv.to_Celsius(from_Faring_temp2.value)
+TempConv.to_Faringate(from_Cels_temp1)
+TempConv.to_Faringate(from_Cels_temp2)
+TempConv.to_Celsius(from_Faring_temp1)
+TempConv.to_Celsius(from_Faring_temp2)
 print()
 TempConv.get_temp_counts_num()
 print()
-
-
-
+print()
 
 
 
@@ -130,3 +132,56 @@ print()
 
 # Решение:
 
+class MetricConvSI_EMS_SI:
+    @staticmethod
+    def сm_to_inch(cm):
+        print(f'Конвертация: {cm} см = {round(cm / 2.54, 2)} дюймов')
+        return round(cm / 2.54, 2)
+
+    @staticmethod
+    def inch_to_сm(inch):
+        print(f'Конвертация: {inch} дюймов = {round(inch * 2.54, 2)} см')
+        return round(inch * 2.54, 2)
+
+    @staticmethod
+    def m_to_foot(m):
+        print(f'Конвертация: {m} метров = {round(m * 3.28, 2)} фт')
+        return round(m * 3.28, 2)
+    @staticmethod
+    def foot_to_m(foot):
+        print(f'Конвертация: {foot} фт = {round(foot / 3.28, 2)} метров')
+        return round(foot / 3.28, 2)
+
+    @staticmethod
+    def km_to_mile(km):
+        print(f'Конвертация: {km} км = {round(km / 1.61, 2)} миль')
+        return round(km / 1.61, 2)
+
+    @staticmethod
+    def mile_to_km(mile):
+        print(f'Конвертация: {mile} миль = {round(mile * 1.61, 2)} км')
+        return round(mile * 1.61, 2)
+
+    @staticmethod
+    def kg_to_pound(kg):
+        print(f'Конвертация: {kg} кг = {round(kg * 2.2, 2)} фунт')
+        return round(kg * 2.2, 2)
+
+    @staticmethod
+    def pound_to_kg(pound):
+        print(f'Конвертация: {pound} фунт = {round(pound / 2.2, 2)} кг')
+        return round(pound / 2.2, 2)
+
+
+print()
+print('Задание 3. Вывод результатов на экран:')
+print()
+MetricConvSI_EMS_SI.сm_to_inch(25.4)
+MetricConvSI_EMS_SI.inch_to_сm(10)
+MetricConvSI_EMS_SI.m_to_foot(10)
+MetricConvSI_EMS_SI.foot_to_m(32.8)
+MetricConvSI_EMS_SI.km_to_mile(1.61)
+MetricConvSI_EMS_SI.mile_to_km(1)
+MetricConvSI_EMS_SI.kg_to_pound(10)
+MetricConvSI_EMS_SI.pound_to_kg(22)
+print()
